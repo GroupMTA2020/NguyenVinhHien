@@ -181,6 +181,8 @@ namespace ThuVien
         {
             hienthidanhsach();
         }
+
+
         void design()
         {
             dgvphieutra.BorderStyle = BorderStyle.None;
@@ -195,7 +197,6 @@ namespace ThuVien
             dgvphieutra.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvphieutra.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-
 
         private void cbbmaphieumuon_Click(object sender, EventArgs e)
         {
