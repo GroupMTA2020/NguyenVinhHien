@@ -12,15 +12,35 @@ namespace ThuVien
 {
     public partial class FormQLPhieuMuon : Form
     {
-        
+        Models.phieumuon myPM;
         public FormQLPhieuMuon()
         {
             InitializeComponent();
-            
-            
+            hienthidanhsach();
+            design();
+            txtmaphieu.Enabled = false;
         }
-       
-        private void btnSVThem_Click(object sender, EventArgs e)
+        public void hienthidanhsach()
+        {
+            DataTable dataTable = Models.phieumuon.getTable_phieumuon();
+            dgvphieumuon.DataSource = dataTable;
+        }
+        void btnReload()
+        {
+            btnSVSua.Visible = btnSVXoa.Visible =
+                btnSVThem.Visible = !btnSVSua.Visible;
+            btnSVHuy.Visible = btnSVLuu.Visible = !btnSVLuu.Visible;
+        }
+        private void clearData()
+        {
+            txtmaphieu.Text = "";
+            cbmadocgia.Text = "";
+            dtpngaymuon.Refresh();
+            dtpngaytra.Refresh();
+            cbbmasach.Text = "";
+        }
+
+    private void btnSVThem_Click(object sender, EventArgs e)
         {
            
         }
@@ -69,6 +89,20 @@ namespace ThuVien
         private void cbbmasach_Click(object sender, EventArgs e)
         {
            
+        }
+        void design()
+        {
+            dgvphieumuon.BorderStyle = BorderStyle.None;
+            dgvphieumuon.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dgvphieumuon.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvphieumuon.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            dgvphieumuon.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dgvphieumuon.BackgroundColor = Color.White;
+            dgvphieumuon.EnableHeadersVisualStyles = false;
+            dgvphieumuon.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvphieumuon.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            dgvphieumuon.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvphieumuon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }
