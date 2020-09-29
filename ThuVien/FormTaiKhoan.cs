@@ -69,7 +69,27 @@ namespace ThuVien
 
         private void btnSVXoa_Click(object sender, EventArgs e)
         {
-           
+            string _txtMaDocGia = "";
+            try
+            {
+                _txtMaDocGia = txtMaDocGia.Text;
+                MessageBox.Show(_txtMaDocGia);
+            }
+            catch { }
+            DialogResult dr = MessageBox.Show(" Bạn có chắc chắn xóa ?", "Xác nhận ", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                myTK = new Models.Taikhoan(txtMaDocGia.Text, txttendangnhap.Text, txtmatkhau.Text, cbbquyen.Text);
+                var i = myTK.DeleteTaikhoan();
+                if (i > 0)
+                {
+                    MessageBox.Show("Xóa Thành Công !");
+
+                }
+                else
+                    MessageBox.Show("Xóa Không thành công");
+            }
+            hienthidanhsach();
         }
 
         private void btnSVHuy_Click(object sender, EventArgs e)
@@ -134,16 +154,37 @@ namespace ThuVien
                 cbbquyen.Text = dgvphieumuon.Rows[index].Cells["Quyen"].Value.ToString();
             }
         }
-        
+        public void SearchByKey(string query, string value)
+        {
+            query = query + "N'%" + value + "%'";
+            DataTable data = Models.Connection.SeachInDataBase(query);
+            if (data.Rows.Count == 0) MessageBox.Show("Không Tìm Thấy");
+            else dgvphieumuon.DataSource = data;
+        }
 
         private void btntatca_Click(object sender, EventArgs e)
         {
-            
+            hienthidanhsach();
         }
         
         private void btntimkiem_Click(object sender, EventArgs e)
         {
-            
+            string GiaTri = cbp_chon.GetItemText(this.cbp_chon.SelectedItem).Trim();
+
+            string keyRow = txttimkiem.Text;
+            if (GiaTri == "" || keyRow == "")
+            {
+                MessageBox.Show("Chưa Có Thông Tin Cần Tìm");
+            }
+            else
+            {
+
+                string query = "";
+                //set value of query if valuaCol change 
+                if (GiaTri == "MaDocGia") query = "Select * from TaiKHoan where MaDocGia like ";
+                if (GiaTri == "TenDangNhap") query = "Select * from TaiKHoan where TenDangNhap like ";
+                SearchByKey(query, keyRow);
+            }
         }
     }
 }
