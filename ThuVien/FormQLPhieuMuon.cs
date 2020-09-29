@@ -67,14 +67,37 @@ namespace ThuVien
         {
             
         }
+        public void SearchByKey(string query, string value)
+        {
+            query = query + "N'%" + value + "%'";
+            DataTable data = Models.Connection.SeachInDataBase(query);
+            if (data.Rows.Count == 0) MessageBox.Show("Không Tìm Thấy");
+            else dgvphieumuon.DataSource = data;
+        }
         private void btntatca_Click_1(object sender, EventArgs e)
         {
-            
+            hienthidanhsach();
         }
        
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            string GiaTri = cbp_chon.GetItemText(this.cbp_chon.SelectedItem).Trim();
+
+            string keyRow = txttimkiem.Text;
+            if (GiaTri == "" || keyRow == "")
+            {
+                MessageBox.Show("Chưa Có Thông Tin Cần Tìm");
+            }
+            else
+            {
+
+                string query = "";
+                //set value of query if valuaCol change 
+                if (GiaTri == "MaDocGia") query = "Select * from PhieuMuon where MaDocGia like ";
+                if (GiaTri == "MaPhieuMuon") query = "Select * from PhieuMuon where MaPhieuMuon like ";
+                if (GiaTri == "MaSach") query = "Select * from PhieuMuon where MaSach like ";
+                SearchByKey(query, keyRow);
+            }
         }
        
         private void FormQLPhieuMuon_Load(object sender, EventArgs e)
@@ -83,12 +106,14 @@ namespace ThuVien
 
         private void cbmadocgia_Click(object sender, EventArgs e)
         {
-          
+            cbmadocgia.DataSource = Models.phieumuon.listmadocgia();
+            cbmadocgia.DisplayMember = "MaDocGia";
         }
 
         private void cbbmasach_Click(object sender, EventArgs e)
         {
-           
+            cbbmasach.DataSource = Models.phieumuon.listmasach();
+            cbbmasach.DisplayMember = "MaSach";
         }
         void design()
         {
