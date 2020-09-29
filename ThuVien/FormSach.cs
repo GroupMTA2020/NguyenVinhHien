@@ -16,9 +16,13 @@ namespace ThuVien
         public FormSach()
         {
             InitializeComponent();
-           
+            showTableSach();
         }
-        
+        public void showTableSach()
+        {
+            DataTable dataTable = Models.Sach.getListBook();
+            dtgvSach.DataSource = dataTable;
+        }
         private void dtgvSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
