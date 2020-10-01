@@ -17,12 +17,14 @@ namespace ThuVien
         {
             InitializeComponent();
             showTableSach();
+            design();
         }
         public void showTableSach()
         {
             DataTable dataTable = Models.Sach.getListBook();
             dtgvSach.DataSource = dataTable;
         }
+
         private void dtgvSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
@@ -41,10 +43,10 @@ namespace ThuVien
 
         private void search_Click(object sender, EventArgs e)
         {
-            if (searchChoice_cbx.SelectedIndex == 0)// ma sach
+            if(searchChoice_cbx.SelectedIndex == 0)// ma sach
             {
                 //do something
-                if (txttimkiem.Text != "")
+                if( txttimkiem.Text != "")
                 {
                     DataTable search_rs = Sach.getTableSachById(txttimkiem.Text);
                     dtgvSach.DataSource = search_rs;
@@ -55,7 +57,7 @@ namespace ThuVien
                 }
 
             }
-            else if (searchChoice_cbx.SelectedIndex == 1)// ten sach
+            else if( searchChoice_cbx.SelectedIndex == 1)// ten sach
             {
                 if (txttimkiem.Text != "")
                 {
@@ -67,7 +69,7 @@ namespace ThuVien
                     MessageBox.Show("Enter Tensach to search, Please.");
                 }
             }
-            else if (searchChoice_cbx.SelectedIndex == 2)// tac gia
+            else if(searchChoice_cbx.SelectedIndex == 2)// tac gia
             {
                 if (txttimkiem.Text != "")
                 {
@@ -79,7 +81,7 @@ namespace ThuVien
                     MessageBox.Show("Enter Tacgia to search, Please.");
                 }
             }
-            else if (searchChoice_cbx.SelectedIndex == 3)// the loai    
+            else if( searchChoice_cbx.SelectedIndex == 3)// the loai    
             {
                 if (txttimkiem.Text != "")
                 {
@@ -91,7 +93,7 @@ namespace ThuVien
                     MessageBox.Show("Enter Theloai to search, Please.");
                 }
             }
-            else if (searchChoice_cbx.SelectedIndex == 4)// nha xuat ban
+            else if(searchChoice_cbx.SelectedIndex == 4)// nha xuat ban
             {
                 if (txttimkiem.Text != "")
                 {
@@ -103,7 +105,7 @@ namespace ThuVien
                     MessageBox.Show("Enter Nhaxuatban to search, Please.");
                 }
             }
-            else if (searchChoice_cbx.SelectedIndex == 5)// gia sach
+            else if( searchChoice_cbx.SelectedIndex == 5)// gia sach
             {
                 if (txttimkiem.Text != "")
                 {
@@ -115,7 +117,7 @@ namespace ThuVien
                     MessageBox.Show("Enter Price to search, Please.");
                 }
             }
-            else if (searchChoice_cbx.SelectedIndex == 6)//so luong
+            else if(searchChoice_cbx.SelectedIndex == 6)//so luong
             {
                 if (txttimkiem.Text != "")
                 {
@@ -127,7 +129,7 @@ namespace ThuVien
                     MessageBox.Show("Enter Soluong to search, Please.");
                 }
             }
-            else if (searchChoice_cbx.SelectedIndex == 7)// tinh trang
+            else if(searchChoice_cbx.SelectedIndex == 7)// tinh trang
             {
                 if (txttimkiem.Text != "")
                 {
@@ -154,7 +156,7 @@ namespace ThuVien
         }
         public void textBoxChangeState()
         {
-            txtmasach.Enabled = txttensach.Enabled = txttacgia.Enabled
+            txtmasach.Enabled = txttensach.Enabled = txttacgia.Enabled 
                 = txttheloai.Enabled = txtnhaxuatban.Enabled = txtgiasach.Enabled
                 = nb_SoLuong.Enabled = txttinhtrang.Enabled = !txtmasach.Enabled;
         }
@@ -168,8 +170,8 @@ namespace ThuVien
         {
             if (Save_btn.Tag.ToString() == "ADD")
             {
-                Sach s = new Sach(txtmasach.Text, txttensach.Text, txttacgia.Text, txttheloai.Text
-                                , txtnhaxuatban.Text, Convert.ToInt32(txtgiasach.Text), Convert.ToInt32(nb_SoLuong.Value), txttinhtrang.Text);
+                Sach s = new Sach(txtmasach.Text, txttensach.Text, txttacgia.Text,txttheloai.Text
+                                ,txtnhaxuatban.Text,Convert.ToInt32(txtgiasach.Text),Convert.ToInt32(nb_SoLuong.Value),txttinhtrang.Text);
                 var i = s.insertSach();
                 if (i == 0)
                 {
@@ -222,8 +224,8 @@ namespace ThuVien
                 Sach s = new Sach(txtmasach.Text);
                 var i = s.deleteBook();
                 if (i > 0)
-                {
-                    showTableSach();
+                { 
+                    showTableSach(); 
                 }
                 else MessageBox.Show("Delete Not Success");
             }
@@ -246,7 +248,7 @@ namespace ThuVien
 
         private void FormSach_Load(object sender, EventArgs e)
         {
-            if (Taikhoan.Quyen == Quyentruy.User)
+            if(Taikhoan.Quyen == Quyentruy.User)
             {
                 Add_btn.Visible = false;
                 Repair_btn.Visible = false;
