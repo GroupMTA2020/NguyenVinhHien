@@ -19,6 +19,7 @@ namespace ThuVien
             hienthidanhsach();
             design();
         }
+
         public void hienthidanhsach()
         {
             dgvphieutra.DataSource = Models.Phieutra.getTable_Phieutra();
@@ -72,7 +73,7 @@ namespace ThuVien
             if (dr == DialogResult.Yes)
             {
                 string ngaytra = convertToDateSQL(dtpngaytra.Value.ToString("dd/MM/yyy"));
-                myPT = new Models.Phieutra(txtmaphieu.Text, cbbmaphieumuon.Text, ngaytra, txttinhtrang.Text);
+                myPT = new Models.Phieutra(txtmaphieu.Text, cbbmaphieumuon.Text,ngaytra, txttinhtrang.Text);
                 var i = myPT.DeletePhieutra();
                 if (i > 0)
                 {
@@ -181,8 +182,6 @@ namespace ThuVien
         {
             hienthidanhsach();
         }
-
-
         void design()
         {
             dgvphieutra.BorderStyle = BorderStyle.None;
