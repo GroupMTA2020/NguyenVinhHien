@@ -19,6 +19,8 @@ namespace ThuVien
             InitializeComponent();
             HienThiDanhSachDG();
             design();
+            txtMaDG.Enabled = false;
+            En();
         }
         public void HienThiDanhSachDG()
         {
@@ -49,7 +51,14 @@ namespace ThuVien
             result = X[2] + "-" + X[1] + "-" + X[0];
             return result;
         }
-
+        public void En()
+        {
+            txtHoTen.Enabled = false;
+            txtTenDN.Enabled = false;
+            txtDiaChi.Enabled = false;
+            cbGioitinh.Enabled = false;
+            dtNamSinh.Enabled = false;
+        }
         private void dgvDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;

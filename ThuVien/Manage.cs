@@ -119,11 +119,28 @@ namespace ThuVien
                 btntaikhoan.Visible = false;
                 btnphieu.Visible = false;
             }
+            this.TopMost = true;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btndangxuat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void Manage_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void pictureBoxclose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.dgvdangmuon = new System.Windows.Forms.DataGridView();
-            this.cbp_chon = new System.Windows.Forms.ComboBox();
-            this.btntimkiem = new System.Windows.Forms.Button();
-            this.txttimkiem = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.MaPhieuMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayPhaiTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbp_chon = new System.Windows.Forms.ComboBox();
+            this.btntimkiem = new System.Windows.Forms.Button();
+            this.txttimkiem = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdangmuon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,46 +59,6 @@
             this.dgvdangmuon.RowTemplate.Height = 24;
             this.dgvdangmuon.Size = new System.Drawing.Size(1275, 446);
             this.dgvdangmuon.TabIndex = 0;
-            // 
-            // cbp_chon
-            // 
-            this.cbp_chon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbp_chon.FormattingEnabled = true;
-            this.cbp_chon.Items.AddRange(new object[] {
-            "MaPhieuMuon",
-            "HoTen"});
-            this.cbp_chon.Location = new System.Drawing.Point(281, 121);
-            this.cbp_chon.Name = "cbp_chon";
-            this.cbp_chon.Size = new System.Drawing.Size(279, 33);
-            this.cbp_chon.TabIndex = 20;
-            // 
-            // btntimkiem
-            // 
-            this.btntimkiem.Location = new System.Drawing.Point(1061, 206);
-            this.btntimkiem.Name = "btntimkiem";
-            this.btntimkiem.Size = new System.Drawing.Size(132, 45);
-            this.btntimkiem.TabIndex = 19;
-            this.btntimkiem.Text = "Tìm Kiếm";
-            this.btntimkiem.UseVisualStyleBackColor = true;
-            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
-            // 
-            // txttimkiem
-            // 
-            this.txttimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttimkiem.Location = new System.Drawing.Point(704, 121);
-            this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.Size = new System.Drawing.Size(280, 30);
-            this.txttimkiem.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(66, 45);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 39);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "TÌm Kiếm";
             // 
             // MaPhieuMuon
             // 
@@ -148,10 +108,51 @@
             this.TinhTrang.Name = "TinhTrang";
             this.TinhTrang.Width = 125;
             // 
+            // cbp_chon
+            // 
+            this.cbp_chon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbp_chon.FormattingEnabled = true;
+            this.cbp_chon.Items.AddRange(new object[] {
+            "MaPhieuMuon",
+            "HoTen"});
+            this.cbp_chon.Location = new System.Drawing.Point(281, 121);
+            this.cbp_chon.Name = "cbp_chon";
+            this.cbp_chon.Size = new System.Drawing.Size(279, 33);
+            this.cbp_chon.TabIndex = 20;
+            // 
+            // btntimkiem
+            // 
+            this.btntimkiem.Location = new System.Drawing.Point(1061, 206);
+            this.btntimkiem.Name = "btntimkiem";
+            this.btntimkiem.Size = new System.Drawing.Size(132, 45);
+            this.btntimkiem.TabIndex = 19;
+            this.btntimkiem.Text = "Tìm Kiếm";
+            this.btntimkiem.UseVisualStyleBackColor = true;
+            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
+            // 
+            // txttimkiem
+            // 
+            this.txttimkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttimkiem.Location = new System.Drawing.Point(704, 121);
+            this.txttimkiem.Name = "txttimkiem";
+            this.txttimkiem.Size = new System.Drawing.Size(280, 30);
+            this.txttimkiem.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(66, 45);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(163, 38);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "TÌm Kiếm";
+            // 
             // Dangmuon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1275, 732);
             this.Controls.Add(this.cbp_chon);
             this.Controls.Add(this.btntimkiem);
