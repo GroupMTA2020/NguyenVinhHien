@@ -171,8 +171,8 @@ namespace ThuVien
 
                 string query = "";
                 //set value of query if valuaCol change 
-                if (GiaTri == "MaPhieu") query = "Select * from PHIEUTRA where MaPhieu like ";
-                if (GiaTri == "MaSach") query = "Select * from PHIEUTRA where MaSach like ";
+                if (GiaTri == "MaPhieuTra") query = "Select * from PHIEUTRA where MaPhieuTra like ";
+                if (GiaTri == "MaPhieuMuon") query = "Select * from PHIEUTRA where MaPhieuMuon like ";
                 if (GiaTri == "NgayTra") query = "Select * from PHIEUTRA where NgayTra like ";
                 SearchByKey(query, keyRow);
             }

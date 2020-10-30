@@ -44,13 +44,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtmaphieu = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbbmaphieumuon = new System.Windows.Forms.ComboBox();
             this.btntatca = new System.Windows.Forms.Button();
             this.txttinhtrang = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbp_chon = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbbmaphieumuon = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvphieutra)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -253,6 +253,16 @@
             this.panel1.Size = new System.Drawing.Size(1364, 254);
             this.panel1.TabIndex = 15;
             // 
+            // cbbmaphieumuon
+            // 
+            this.cbbmaphieumuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbmaphieumuon.FormattingEnabled = true;
+            this.cbbmaphieumuon.Location = new System.Drawing.Point(207, 89);
+            this.cbbmaphieumuon.Name = "cbbmaphieumuon";
+            this.cbbmaphieumuon.Size = new System.Drawing.Size(280, 33);
+            this.cbbmaphieumuon.TabIndex = 23;
+            this.cbbmaphieumuon.Click += new System.EventHandler(this.cbbmaphieumuon_Click);
+            // 
             // btntatca
             // 
             this.btntatca.Location = new System.Drawing.Point(1130, 189);
@@ -286,8 +296,8 @@
             this.cbp_chon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbp_chon.FormattingEnabled = true;
             this.cbp_chon.Items.AddRange(new object[] {
-            "MaPhieu",
-            "MaSach",
+            "MaPhieuTra",
+            "MaPhieuMuon",
             "NgayTra"});
             this.cbp_chon.Location = new System.Drawing.Point(207, 204);
             this.cbp_chon.Name = "cbp_chon";
@@ -313,16 +323,6 @@
             this.label1.Size = new System.Drawing.Size(142, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Phiếu Trả";
-            // 
-            // cbbmaphieumuon
-            // 
-            this.cbbmaphieumuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbmaphieumuon.FormattingEnabled = true;
-            this.cbbmaphieumuon.Location = new System.Drawing.Point(207, 89);
-            this.cbbmaphieumuon.Name = "cbbmaphieumuon";
-            this.cbbmaphieumuon.Size = new System.Drawing.Size(280, 33);
-            this.cbbmaphieumuon.TabIndex = 23;
-            this.cbbmaphieumuon.Click += new System.EventHandler(this.cbbmaphieumuon_Click);
             // 
             // FormPhieuTra
             // 
